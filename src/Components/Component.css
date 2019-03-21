@@ -1,0 +1,14 @@
+#topNav {
+  background: #ffaa00;
+}
+
+#mainInput {
+  border: none;
+}
+
+#inputButton {
+  background: #ffaa00;
+  color: #0e1e2e;
+  border: none;
+  font-weight: 600;
+}
