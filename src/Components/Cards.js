@@ -31,7 +31,10 @@ const Cards = memo(props => {
                 }}
               >
                 <Card.Header style={{ textAlign: "center" }}>
-                  <h2 style={{ margin: 0 }}>{props.city}</h2>
+                  <h2 style={{ margin: 0 }}>
+                    {props.city}&nbsp;
+                    {props.state}
+                  </h2>
                 </Card.Header>
                 <Card.Body style={{ textAlign: "center" }}>
                   <WeatherIcon

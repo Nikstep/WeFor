@@ -38,6 +38,7 @@ class App extends Component {
     const data = await apiCall.json();
     this.setState({
       city: data.city.name,
+      state: data.city.country,
       temp: Math.round(data.list[0].main.temp),
       iconID: data.list[0].weather[0].id,
       description: data.list[0].weather[0].description,
@@ -49,6 +50,7 @@ class App extends Component {
         new Date(data.list[0].dt * 1000).getUTCMonth() + 1,
       )}-${String(new Date(data.list[0].dt * 1000).getUTCDate())}`,
     });
+    console.log(data);
   };
 
   render() {
@@ -68,6 +70,7 @@ class App extends Component {
         <InputField weatherGetter={this.weatherGetter} />
         <Cards
           city={this.state.city}
+          state={this.state.state}
           temp={this.state.temp}
           desc={this.state.description}
           icon={this.state.iconID}
