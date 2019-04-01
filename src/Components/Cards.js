@@ -14,6 +14,13 @@ import WeatherIcon from "react-icons-weather";
 import DayCard from "./DayCard";
 import HourCard from "./HourCard";
 
+const month = ("" + (new Date().getMonth() + 1))
+  .replace(/\b(\d{1})\b/g, "0$1")
+  .replace(/-/g, "");
+const day = ("" + new Date().getDate())
+  .replace(/\b(\d{1})\b/g, "0$1")
+  .replace(/-/g, "");
+
 const Cards = memo(props => {
   return (
     <Collapse in={props.open}>
@@ -79,9 +86,7 @@ const Cards = memo(props => {
                   }}
                 >
                   {props.list.map((forcast, index) =>
-                    forcast.dt_txt.includes(
-                      `${new Date().getMonth() + 1}-${new Date().getDate()}`,
-                    ) ? (
+                    forcast.dt_txt.includes(`${month}-${day}`) ? (
                       <HourCard {...forcast} key={index} />
                     ) : (
                       ""

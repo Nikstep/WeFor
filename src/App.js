@@ -50,7 +50,6 @@ class App extends Component {
         new Date(data.list[0].dt * 1000).getUTCMonth() + 1,
       )}-${String(new Date(data.list[0].dt * 1000).getUTCDate())}`,
     });
-    console.log(data);
   };
 
   render() {
